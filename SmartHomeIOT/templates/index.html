@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Monitoring System</title>
+		
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <script type="text/javascript" src="{{ url_for('static', filename='js/Chart.bundle.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/jqueryui.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/selectize.js') }}"></script>
+		
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/selectize.css') }}" />
+    </head>
+    <body>
+	<div class="toplabel">
+		<h1>Monitoring System</h1>
+	</div>
+	<div class="sel">
+		<div>Select Prosumer:</div>
+		<select id="prosumer">
+		  <option value="1">Prosumer 1</option>
+		  <option value="2">Prosumer 2</option>
+		  <option value="3">Prosumer 3</option>
+		  <option value="4">Prosumer 4</option>
+		</select>
+		<script>
+			$(function() {
+				$('#prosumer').selectize([]);
+			});
+		</script>
+	</div>
+	<div class="container">	
+		<div class="chartpro">
+			<canvas id="myChart" width="400px" height="400px"></canvas>
+		</div>
+		<div class="chartcons" >
+			<canvas id="myChart1" width="400px" height="400px"></canvas>
+		</div>
+		<div class="chartbat" >
+			<canvas id="myChart2" width="400px" height="400px"></canvas>
+		</div>
+		<div class="chartpic" >
+			<img src="{{ url_for('static', filename='img/grid.png') }}" />
+		</div>
+	</div>
+	<script src="{{ url_for('static', filename='js/pchart.js') }}"> </script>
+    </body>
+	
+	
+	
+</html>
